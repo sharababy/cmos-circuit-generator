@@ -1,0 +1,97 @@
+<html>
+
+	<head>
+		<title>CirGen</title>
+		<script type="text/javascript" src="nand_circuit.js"></script>
+		<script type="text/javascript" src="nor_circuit.js"></script>
+		<script type="text/javascript" src="not_circuit.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>		
+
+
+		<style type="text/css">
+			.mod{
+				border: 1px solid #000;
+				width:500px;
+				height:500px;
+			}
+			#exp{
+				height: 30px;
+				width:200px;
+				font-size: 22px;
+				padding:5px;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		
+
+		<div>
+			<input type="text" name="exp" id="exp" placeholder="Use { & , ^ , ~ }">
+			<button onclick="return send()">Construct Circuit</button>
+		</div>
+		<br>
+		<h2>Module List</h2>
+		<div style="display: block;" id="list">
+			
+		</div>
+
+		<script type="text/javascript">
+			
+			// nand("nand_1",1,"a","G","b","H");
+			// nor("nor_1",1,"a","G","b","H");
+			// not("not_1",1,"a","G","b","H");
+			
+
+			function send(){
+				var exp = $("#exp").val();
+
+				exp = exp.replace(/&/g,"1"); // replace all 1s
+		        exp = exp.split('^').join("2"); // replace all 2s
+		        exp = exp.replace(/~/g,"3"); // replace all 3s
+
+				$.get("/="+exp, function(data, status){
+			        console.log("Data: " + data + "\nStatus: " + status);
+			        $("#list").empty();
+			        drawCircuit(data);
+			    });
+
+				return false
+			}
+
+			function drawCircuit(data){
+
+				var logic = JSON.parse(data);
+		
+				for (var i = 0; i < logic.length; i++) {
+					
+					var v = logic[i];
+
+					if (v.eval == 1) {
+						console.log("Reached")
+						var $canvas = $("<canvas></canvas>", {"id": "mod"+v.count, "class": "mod"});
+						$canvas.attr("height","500");
+						$canvas.attr("width","500");
+						$("#list").append($canvas);
+
+						if (v.op === 1) {
+							nand("mod"+v.count,v.count,v.input1.name,v.input1.alias,v.input2.name,v.input1.alias);
+						}
+						else if (v.op === 2) {
+
+							nor("mod"+v.count,v.count,v.input1.name,v.input1.alias,v.input2.name,v.input1.alias);
+						}
+						else if (v.op === 3) {
+							
+							not("mod"+v.count,v.count,v.input1.name,v.input1.alias,v.input1.name,v.input1.alias);
+						}
+						
+					}
+				}
+			}
+
+		</script>
+	</body>
+
+</html>
