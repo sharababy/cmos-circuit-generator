@@ -5,7 +5,8 @@
 		<script type="text/javascript" src="nand_circuit.js"></script>
 		<script type="text/javascript" src="nor_circuit.js"></script>
 		<script type="text/javascript" src="not_circuit.js"></script>
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>		
+		<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->	
+		<script type="text/javascript" src="jquery.min.js"></script>	
 
 
 		<style type="text/css">
@@ -33,6 +34,7 @@
 		</div>
 		<br>
 		<h2>Module List</h2>
+
 		<div style="display: inline;" id="list">
 			
 		</div>
@@ -73,6 +75,7 @@
 						var $canvas = $("<canvas></canvas>", {"id": "mod"+v.count, "class": "mod"});
 						$canvas.attr("height","500");
 						$canvas.attr("width","500");
+						
 						$("#list").append($canvas);
 
 						if (v.op === 1) {

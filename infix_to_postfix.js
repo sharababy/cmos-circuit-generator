@@ -52,27 +52,27 @@ function _to_postfix(infix_logic){
 			if(stack.length != 0){
 				if ( (precidence(stack[stack.length-1]) >=  precidence(infix_logic[counter]) ) && stack[stack.length-1] != "(" ) {
 					//var p = stack.pop();
-					console.log(stack,postfix);
+					//console.log(stack,postfix);
 					debugger;
 					while( precidence(stack[stack.length-1]) >=  precidence( infix_logic[counter] ) ){
 							
 						p = stack.pop();
 						postfix = postfix + p;
 						
-						console.log(stack,postfix);
+						//console.log(stack,postfix);
 						debugger;
 					}
 					
 					
 					stack.push(infix_logic[counter]);
-					console.log(stack,postfix);
+					//console.log(stack,postfix);
 					debugger;
 				}
 				else{
 					
 					
 					stack.push(infix_logic[counter]);	
-					console.log(stack,postfix);
+					//console.log(stack,postfix);
 					debugger;
 				}
 			}
@@ -80,7 +80,7 @@ function _to_postfix(infix_logic){
 				
 
 				stack.push(infix_logic[counter]);	
-				console.log(stack,postfix);
+				//console.log(stack,postfix);
 				debugger;
 			}
 
@@ -89,7 +89,7 @@ function _to_postfix(infix_logic){
 			
 
 			postfix = postfix + infix_logic[counter];
-			console.log(stack,postfix);
+			//console.log(stack,postfix);
 			debugger;
 			
 		}
@@ -100,7 +100,7 @@ function _to_postfix(infix_logic){
 		var p = stack.pop();
 		debugger;
 		postfix = postfix + p;
-		console.log(stack,postfix);
+		//console.log(stack,postfix);
 	}
 
 	return postfix;
