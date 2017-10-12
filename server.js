@@ -69,3 +69,6 @@ http.createServer(function (request, response) {
      console.log(e.stack)
    }
 }).listen(port)
+//( (~( ( (~a) & (b) )^(c) ) ) & (d^e) ) & (f^g)
+
+// ((~(((~a)&(b))^(c)))&(d^e))&(f^g)

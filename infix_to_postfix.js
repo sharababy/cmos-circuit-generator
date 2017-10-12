@@ -1,4 +1,6 @@
-let stack = [];
+'use strict'
+
+var stack = [];
 
 
 function precidence(op){
@@ -18,7 +20,7 @@ function precidence(op){
 
 function _to_postfix(infix_logic){
 
-	let postfix = ""
+	var postfix = ""
 
 	for (var counter = 0; counter < infix_logic.length; counter++) {
 		
@@ -27,21 +29,21 @@ function _to_postfix(infix_logic){
 			
 			
 			stack.push(infix_logic[counter]);	
-			////console.log(stack,postfix);
+			//console.log(stack,postfix);
 			debugger;
 		}
 		else if(infix_logic[counter] == ')'){
 			
 
-			let p = stack.pop();
-			////console.log(stack,postfix);
+			var p = stack.pop();
+			//console.log(stack,postfix);
 			debugger;
 			while(p != '('){
 				
 				postfix = postfix + p;
 				
 				p = stack.pop();
-				////console.log(stack,postfix);
+				//console.log(stack,postfix);
 				debugger;
 			}	
 		}
@@ -49,28 +51,28 @@ function _to_postfix(infix_logic){
 
 			if(stack.length != 0){
 				if ( (precidence(stack[stack.length-1]) >=  precidence(infix_logic[counter]) ) && stack[stack.length-1] != "(" ) {
-					let p = stack.pop();
-					//console.log(stack,postfix);
+					//var p = stack.pop();
+					console.log(stack,postfix);
 					debugger;
 					while( precidence(stack[stack.length-1]) >=  precidence( infix_logic[counter] ) ){
 							
-
-						postfix = postfix + p;
 						p = stack.pop();
-						//console.log(stack,postfix);
+						postfix = postfix + p;
+						
+						console.log(stack,postfix);
 						debugger;
 					}
 					
 					
 					stack.push(infix_logic[counter]);
-					//console.log(stack,postfix);
+					console.log(stack,postfix);
 					debugger;
 				}
 				else{
 					
 					
 					stack.push(infix_logic[counter]);	
-					//console.log(stack,postfix);
+					console.log(stack,postfix);
 					debugger;
 				}
 			}
@@ -78,14 +80,16 @@ function _to_postfix(infix_logic){
 				
 
 				stack.push(infix_logic[counter]);	
-				//console.log(stack,postfix);
+				console.log(stack,postfix);
 				debugger;
 			}
 
 		}
 		else{
 			
+
 			postfix = postfix + infix_logic[counter];
+			console.log(stack,postfix);
 			debugger;
 			
 		}
@@ -93,10 +97,10 @@ function _to_postfix(infix_logic){
 	}
 
 	while(stack.length != 0){
-		let p = stack.pop();
+		var p = stack.pop();
 		debugger;
 		postfix = postfix + p;
-		//console.log(stack,postfix);
+		console.log(stack,postfix);
 	}
 
 	return postfix;
