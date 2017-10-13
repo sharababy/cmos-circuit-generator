@@ -1,81 +1,86 @@
-function not(id,mod_num,a_name,a_alias,b_name,b_alias){
+function not(id,mod_num,a_name,a_alias,b_name,b_alias,x_off,y_off,x_scale,y_scale){
 
 			var canvas = document.getElementById(id);
 			var ctx = canvas.getContext("2d");
 			ctx.beginPath();
-			ctx.moveTo(235,30);
-			ctx.lineTo(265,30);
-			ctx.moveTo(250,30);
-			ctx.lineTo(250,80); // T formation
+			ctx.moveTo(x_scale*(x_off+235),y_scale*(y_off+30));
+			ctx.lineTo(x_scale*(x_off+265),y_scale*(y_off+30));
+			ctx.moveTo(x_scale*(x_off+250),y_scale*(y_off+30));
+			ctx.lineTo(x_scale*(x_off+250),y_scale*(y_off+80)); // T formation
 
 			
-			ctx.moveTo(250,110); // Pmos
-			ctx.lineTo(230,110);
-			ctx.lineTo(230,80);
-			ctx.lineTo(250,80);
+			ctx.moveTo(x_scale*(x_off+250),y_scale*(y_off+110)); // Pmos
+			ctx.lineTo(x_scale*(x_off+230),y_scale*(y_off+110));
+			ctx.lineTo(x_scale*(x_off+230),y_scale*(y_off+80));
+			ctx.lineTo(x_scale*(x_off+250),y_scale*(y_off+80));
 			
 
-			ctx.moveTo(225,80); // topper line for parellel block
-			ctx.lineTo(225,110); 
+			ctx.moveTo(x_scale*(x_off+225),y_scale*(y_off+80)); // topper line for parellel block
+			ctx.lineTo(x_scale*(x_off+225),y_scale*(y_off+110)); 
 
 			
-			ctx.moveTo(250,110); // mid axis line
-			ctx.lineTo(250,150);
+			ctx.moveTo(x_scale*(x_off+250),y_scale*(y_off+110)); // mid axis line
+			ctx.lineTo(x_scale*(x_off+250),y_scale*(y_off+150));
 
-			ctx.lineTo(235,150);
-			ctx.lineTo(235,180);
-			ctx.lineTo(250,180);
-			ctx.lineTo(250,190);
-
-
-			ctx.lineTo(250,240); // the ground symbol
-			ctx.moveTo(240,240);
-			ctx.lineTo(260,240);
-			ctx.moveTo(243,245);
-			ctx.lineTo(257,245);
-			ctx.moveTo(246,250);
-			ctx.lineTo(254,250);
-
-			ctx.moveTo(230,150); // topper line for n-mos 1
-			ctx.lineTo(230,180);
+			ctx.lineTo(x_scale*(x_off+235),y_scale*(y_off+150));
+			ctx.lineTo(x_scale*(x_off+235),y_scale*(y_off+180));
+			ctx.lineTo(x_scale*(x_off+250),y_scale*(y_off+180));
+			ctx.lineTo(x_scale*(x_off+250),y_scale*(y_off+190));
 
 
-			ctx.moveTo(230,165); // perpendicular line in nmos 1
-			ctx.lineTo(215,165);
+			ctx.lineTo(x_scale*(x_off+250),y_scale*(y_off+240)); // the ground symbol
+			ctx.moveTo(x_scale*(x_off+240),y_scale*(y_off+240));
+			ctx.lineTo(x_scale*(x_off+260),y_scale*(y_off+240));
+			ctx.moveTo(x_scale*(x_off+243),y_scale*(y_off+245));
+			ctx.lineTo(x_scale*(x_off+257),y_scale*(y_off+245));
+			ctx.moveTo(x_scale*(x_off+246),y_scale*(y_off+250));
+			ctx.lineTo(x_scale*(x_off+254),y_scale*(y_off+250));
 
-			
-			ctx.moveTo(217,95); // perpendicular line in pmos 1
-			ctx.lineTo(202,95);
+			ctx.moveTo(x_scale*(x_off+230),y_scale*(y_off+150)); // topper line for n-mos 1
+			ctx.lineTo(x_scale*(x_off+230),y_scale*(y_off+180));
+
+
+			ctx.moveTo(x_scale*(x_off+230),y_scale*(y_off+165)); // perpendicular line in nmos 1
+			ctx.lineTo(x_scale*(x_off+182),y_scale*(y_off+165));
 
 			
-			ctx.moveTo(250,135); // output line
-			ctx.lineTo(300,135);
+			ctx.moveTo(x_scale*(x_off+217),y_scale*(y_off+95)); // perpendicular line in pmos 1
+			ctx.lineTo(x_scale*(x_off+182),y_scale*(y_off+95));
 
+			
+			ctx.moveTo(x_scale*(x_off+250),y_scale*(y_off+135)); // output line
+			ctx.lineTo(x_scale*(x_off+400),y_scale*(y_off+135));
+
+
+			ctx.moveTo(x_scale*(x_off+182),y_scale*(y_off+95)); // common input line
+			ctx.lineTo(x_scale*(x_off+182),y_scale*(y_off+165));
+
+			ctx.moveTo(x_scale*(x_off+182),y_scale*(y_off+135)); // common input line
+			ctx.lineTo(x_scale*(x_off+100),y_scale*(y_off+135));
 
 			ctx.stroke();
 
 
 			var circ1=canvas.getContext("2d");
 			circ1.beginPath();
-			circ1.arc(220,95,3,0,2*Math.PI);
+			circ1.arc(202,170,3,0,2*Math.PI);
 			circ1.stroke();
 
-			
+
 			var text=canvas.getContext("2d");
+			text.font="22px Verdana";
+			text.fillText("NOT - MODULE "+mod_num,10,20);
+			
+			text.font="17px Verdana";
+			text.fillText(a_alias+"  (INPUT)",10,230);
+			
+
 			text.font="16px Verdana";
-			text.fillText("NOT MODULE "+mod_num+" = "+"~"+a_name,10,20);
-
-			text.font="12px Verdana";
-			text.fillText("Y (OUTPUT)",320,140);
-
-			text.font="12px Verdana";
-			text.fillText(a_alias+"  (INPUT)",130,100);
-			text.fillText(a_alias+"  (INPUT)",145,170);
-			
 			text.fillStyle="#FF0000"
-			text.fillText("Legend",50,260);
+			text.fillText("Legend",10,420);
 			text.fillStyle="#000000"
-			text.fillText(a_name+" = "+a_alias,50,275);
-			
-
+			text.fillText(a_name+" = "+a_alias,10,455);
 }
+/*
+a&b^c&(~d)
+*/

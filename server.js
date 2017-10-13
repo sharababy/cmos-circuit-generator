@@ -28,24 +28,18 @@ http.createServer(function (request, response) {
         var exp = request.url.substring(2);
 
         exp = exp.replace(/1/g,"&"); // replace all 1s
-
         exp = exp.replace(/2/g,"^"); // replace all 2s
-
         exp = exp.replace(/3/g,"~"); // replace all 3s
 
         console.log(exp);
 
-
-        postfix = convert._to_postfix(exp)
-
         let bool_values = [true,false/*,true,false*/];
-
-        var c = circuit.contruct_circuit(postfix,bool_values);
-
+        postfix = convert._to_postfix(exp)
         console.log(postfix)
 
+        var c = circuit.contruct_circuit(postfix,bool_values);
+        
         response.end(JSON.stringify(c))
-
         
      }
      else{

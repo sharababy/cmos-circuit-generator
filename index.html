@@ -11,9 +11,13 @@
 
 		<style type="text/css">
 			.mod{
-				border: 1px solid #000;
-				width:500px;
-				height:500px;
+				/*border: 1px solid #000;*/
+				width:300px;
+				height:300px;
+			}
+			#list{
+				 overflow-x:scroll;
+				 white-space:nowrap;
 			}
 			#exp{
 				height: 30px;
@@ -35,7 +39,7 @@
 		<br>
 		<h2>Module List</h2>
 
-		<div style="display: inline;" id="list">
+		<div style="display: inline-block;" id="list">
 			
 		</div>
 
@@ -79,15 +83,15 @@
 						$("#list").append($canvas);
 
 						if (v.op === 1) {
-							nand("mod"+v.count,v.count,v.input1.name,v.input2.alias,v.input2.name,v.input1.alias);
+							nand("mod"+v.count,v.count,v.input1.name,v.input2.alias,v.input2.name,v.input1.alias,-120,-10,2,2);
 						}
 						else if (v.op === 2) {
 
-							nor("mod"+v.count,v.count,v.input1.name,v.input2.alias,v.input2.name,v.input1.alias);
+							nor("mod"+v.count,v.count,v.input1.name,v.input2.alias,v.input2.name,v.input1.alias,-120,-10,2,2);
 						}
 						else if (v.op === 3) {
 							
-							not("mod"+v.count,v.count,v.input1.name,v.input1.alias,v.input1.name,v.input1.alias);
+							not("mod"+v.count,v.count,v.input1.name,v.input1.alias,v.input1.name,v.input1.alias,-120,-10,2,2);
 						}
 						
 					}
