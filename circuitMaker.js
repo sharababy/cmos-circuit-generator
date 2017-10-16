@@ -103,9 +103,7 @@ function drawCircuit(data){
 
 			var isDirect = isChildNext(i,logic);
 
-			if (v.op == 3) {
-				console.log("isDirect",isDirect,"for",v.count);
-			}
+			
 
 			var wireSet = {}
 

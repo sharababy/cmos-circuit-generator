@@ -20,7 +20,7 @@ function continueWire(idPrefix, id, depth, jumpLength ,x_off, y_off, x_scale, y_
 
 		var canvas = document.getElementById(idPrefix+i);
 
-		console.log(idPrefix+i);
+		//console.log(idPrefix+i);
 
 		var ctx = canvas.getContext("2d");	
 
@@ -38,7 +38,7 @@ function continueWire(idPrefix, id, depth, jumpLength ,x_off, y_off, x_scale, y_
 
 	var canvas = document.getElementById(idPrefix+finalElement);
 
-		console.log("Final: ",idPrefix+finalElement);
+		//console.log("Final: ",idPrefix+finalElement);
 
 		var ctx = canvas.getContext("2d");	
 
