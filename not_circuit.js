@@ -1,4 +1,4 @@
-function not(id,mod_num,a_name,a_alias,b_name,b_alias,x_off,y_off,x_scale,y_scale){
+function not(id,mod_num,a_name,a_alias,b_name,b_alias,x_off,y_off,x_scale,y_scale,isDirect){
 
 			var canvas = document.getElementById(id);
 			var ctx = canvas.getContext("2d");
@@ -48,8 +48,15 @@ function not(id,mod_num,a_name,a_alias,b_name,b_alias,x_off,y_off,x_scale,y_scal
 			ctx.lineTo(x_scale*(x_off+182),y_scale*(y_off+95));
 
 			
-			ctx.moveTo(x_scale*(x_off+250),y_scale*(y_off+135)); // output line
-			ctx.lineTo(x_scale*(x_off+400),y_scale*(y_off+135));
+			if (isDirect === 0) {
+				ctx.moveTo(x_scale*(x_off+250),y_scale*(y_off+135)); // output line
+				ctx.lineTo(x_scale*(x_off+350),y_scale*(y_off+135));
+				ctx.lineTo(x_scale*(x_off+350),y_scale*(y_off+265));
+			}
+			else{
+				ctx.moveTo(x_scale*(x_off+250),y_scale*(y_off+135)); // output line
+				ctx.lineTo(x_scale*(x_off+400),y_scale*(y_off+135));
+			}
 
 
 			ctx.moveTo(x_scale*(x_off+182),y_scale*(y_off+95)); // common input line
@@ -59,6 +66,7 @@ function not(id,mod_num,a_name,a_alias,b_name,b_alias,x_off,y_off,x_scale,y_scal
 			ctx.lineTo(x_scale*(x_off+100),y_scale*(y_off+135));
 
 			ctx.stroke();
+
 
 
 			var circ1=canvas.getContext("2d");

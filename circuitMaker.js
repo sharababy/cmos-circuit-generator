@@ -103,7 +103,9 @@ function drawCircuit(data){
 
 			var isDirect = isChildNext(i,logic);
 
-			
+			if (v.op == 3) {
+				console.log("isDirect",isDirect,"for",v.count);
+			}
 
 			var wireSet = {}
 
@@ -134,7 +136,7 @@ function drawCircuit(data){
 			}
 			else if (v.op === 3) {
 				
-				not("mod"+v.count,v.count,v.input1.name,v.input1.alias,v.input1.name,v.input1.alias,-120,-10,2,2,0);
+				not("mod"+v.count,v.count,v.input1.name,v.input1.alias,v.input1.name,v.input1.alias,-120,-10,2,2,isDirect);
 			}
 			
 		}
