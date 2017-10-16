@@ -1,0 +1,20 @@
+{
+  "name": "cmos-circuit-generator",
+  "version": "1.0.0",
+  "description": "To run this program you need to have nodeJS (>= 6.11.x) installed before hand.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sharababy/cmos-circuit-generator.git"
+  },
+  "author": "Vedant Bassi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sharababy/cmos-circuit-generator/issues"
+  },
+  "homepage": "https://github.com/sharababy/cmos-circuit-generator#readme"
+}
