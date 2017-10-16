@@ -63,7 +63,7 @@ function nand(id,mod_num,a_name,a_alias,b_name,b_alias,x_off,y_off,x_scale,y_sca
 			ctx.lineTo(x_scale*(x_off+182),y_scale*(y_off+95));
 
 			ctx.moveTo(x_scale*(x_off+303),y_scale*(y_off+95)); // perpendicular line in pmos 2
-			ctx.lineTo(x_scale*(x_off+318),y_scale*(y_off+95));
+			ctx.lineTo(x_scale*(x_off+315),y_scale*(y_off+95));
 
 			
 
@@ -82,11 +82,13 @@ function nand(id,mod_num,a_name,a_alias,b_name,b_alias,x_off,y_off,x_scale,y_sca
 
 			if (isT2 == 0) {
 				
-				ctx.moveTo(x_scale*(x_off+318),y_scale*(y_off+95));  // perpendicular line in pmos 2
-				ctx.lineTo(x_scale*(x_off+318),y_scale*(y_off+185));
+				ctx.moveTo(x_scale*(x_off+315),y_scale*(y_off+95));  // perpendicular line in pmos 2
+				ctx.lineTo(x_scale*(x_off+315),y_scale*(y_off+265));
+				ctx.moveTo(x_scale*(x_off+215),y_scale*(y_off+205));
 				ctx.lineTo(x_scale*(x_off+215),y_scale*(y_off+185));
-				ctx.lineTo(x_scale*(x_off+215),y_scale*(y_off+205));
-				ctx.lineTo(x_scale*(x_off+215),y_scale*(y_off+265));
+
+				ctx.lineTo(x_scale*(x_off+315),y_scale*(y_off+185));
+				// ctx.lineTo(x_scale*(x_off+215),y_scale*(y_off+265));
 			}
 
 			

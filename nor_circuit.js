@@ -73,7 +73,7 @@ function nor(id,mod_num,a_name,a_alias,b_name,b_alias,x_off,y_off,x_scale,y_scal
 			ctx.lineTo(x_scale*(x_off+182),y_scale*(y_off+195));
 
 			ctx.moveTo(x_scale*(x_off+296),y_scale*(y_off+195)); // perpendicular line in parellel 2
-			ctx.lineTo(x_scale*(x_off+310),y_scale*(y_off+195));
+			ctx.lineTo(x_scale*(x_off+315),y_scale*(y_off+195));
 
 			
 			ctx.moveTo(x_scale*(x_off+182),y_scale*(y_off+105)); // common input line
@@ -94,8 +94,8 @@ function nor(id,mod_num,a_name,a_alias,b_name,b_alias,x_off,y_off,x_scale,y_scal
 				
 				ctx.moveTo(x_scale*(x_off+210),y_scale*(y_off+65)); // perpendicular line in serial 1
 				ctx.lineTo(x_scale*(x_off+210),y_scale*(y_off+40));
-				ctx.lineTo(x_scale*(x_off+310),y_scale*(y_off+40));
-				ctx.lineTo(x_scale*(x_off+310),y_scale*(y_off+260));
+				ctx.lineTo(x_scale*(x_off+315),y_scale*(y_off+40));
+				ctx.lineTo(x_scale*(x_off+315),y_scale*(y_off+260));
 			}
 
 			if (isDirect == 1) {
