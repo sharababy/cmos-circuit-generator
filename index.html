@@ -18,7 +18,7 @@
 				height:300px;
 			}
 			#list,#wires{
-				 overflow-x:scroll;
+				 /*overflow-x:scroll;*/
 				 white-space:nowrap;
 			}
 			#exp{
@@ -39,6 +39,9 @@
 			<button onclick="return send()">Construct Circuit</button>
 		</div>
 		<br>
+		
+		<button onclick="return borderToggle()" class="borderToggle">Show Bounds</button>
+		<br>
 		<h2>Module List</h2>
 
 		<div style="display: inline-block;" id="list">
@@ -48,6 +51,25 @@
 			
 		</div>
 
+		<script type="text/javascript">
+				
+			function borderToggle(){
+
+				//console.log($(".borderToggle").html())	
+				if ($(".borderToggle").html() === "Show Bounds") {
+					
+					$(".mod").css("border","1px solid #000");
+					$(".borderToggle").html("Hide Bounds") ;	
+				}
+				else{
+					$(".mod").css("border","0px solid transparent")
+					$(".borderToggle").html("Show Bounds");		
+				}
+				
+				return false
+			}
+
+		</script>
 	</body>
 
 </html>
