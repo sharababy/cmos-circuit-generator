@@ -1,4 +1,4 @@
-function nor(id,mod_num,a_name,a_alias,b_name,b_alias,x_off,y_off,x_scale,y_scale){
+function nor(id,mod_num,a_name,a_alias,b_name,b_alias,x_off,y_off,x_scale,y_scale,isT1,isT2,isDirect){
 
 			var canvas = document.getElementById(id);
 			var ctx = canvas.getContext("2d");
@@ -63,10 +63,10 @@ function nor(id,mod_num,a_name,a_alias,b_name,b_alias,x_off,y_off,x_scale,y_scal
 
 
 			
-			ctx.moveTo(x_scale*(x_off+225),y_scale*(y_off+105)); // perpendicular line in serial 1
+			ctx.moveTo(x_scale*(x_off+225),y_scale*(y_off+105)); // perpendicular line in serial 2
 			ctx.lineTo(x_scale*(x_off+183),y_scale*(y_off+105));
 
-			ctx.moveTo(x_scale*(x_off+225),y_scale*(y_off+65)); // perpendicular line in serial 2
+			ctx.moveTo(x_scale*(x_off+225),y_scale*(y_off+65)); // perpendicular line in serial 1
 			ctx.lineTo(x_scale*(x_off+210),y_scale*(y_off+65));
 			
 			ctx.moveTo(x_scale*(x_off+204),y_scale*(y_off+195)); // perpendicular line in parellel 1
@@ -82,7 +82,24 @@ function nor(id,mod_num,a_name,a_alias,b_name,b_alias,x_off,y_off,x_scale,y_scal
 			ctx.lineTo(x_scale*(x_off+182),y_scale*(y_off+195));
 
 			ctx.moveTo(x_scale*(x_off+182),y_scale*(y_off+135)); // common input line
-			ctx.lineTo(x_scale*(x_off+100),y_scale*(y_off+135));
+			
+
+
+			if (isT1 == 0) {
+				ctx.lineTo(x_scale*(x_off+100),y_scale*(y_off+135));
+			}
+			else{
+				ctx.lineTo(x_scale*(x_off+150),y_scale*(y_off+135));
+			}
+
+			if (isT2 == 0) {
+				
+				ctx.moveTo(x_scale*(x_off+210),y_scale*(y_off+65)); // perpendicular line in serial 1
+				ctx.lineTo(x_scale*(x_off+210),y_scale*(y_off+40));
+				ctx.lineTo(x_scale*(x_off+310),y_scale*(y_off+40));
+				ctx.lineTo(x_scale*(x_off+310),y_scale*(y_off+260));
+			}
+
 
 			ctx.stroke();
 
@@ -105,10 +122,10 @@ function nor(id,mod_num,a_name,a_alias,b_name,b_alias,x_off,y_off,x_scale,y_scal
 			// text.fillText("Y (OUTPUT)",320,140);
 
 			text.font="17px Verdana";
-			text.fillText(b_alias+"  (INPUT)",10,230);
+			text.fillText(a_alias+"  (INPUT)",10,230);
 
-			text.fillText(a_alias,400,375);
-			text.fillText(a_alias,155,115);
+			text.fillText(b_alias,400,375);
+			text.fillText(b_alias,155,115);
 			
 			
 			text.font="16px Verdana";
