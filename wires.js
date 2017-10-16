@@ -10,12 +10,13 @@ function startWire(id , depth,x_off,y_off,x_scale,y_scale){
 
 
 	ctx.stroke();
+
 }
 
 
 function continueWire(idPrefix, id, depth, jumpLength ,x_off, y_off, x_scale, y_scale){
 
-	for (var i = id+1; i <= jumpLength-1 ; i++) {
+	for (var i = id+1; i <= id+jumpLength-1 ; i++) {
 
 		var canvas = document.getElementById(idPrefix+i);
 
@@ -28,6 +29,8 @@ function continueWire(idPrefix, id, depth, jumpLength ,x_off, y_off, x_scale, y_
 		ctx.lineTo(x_scale*(x_off+400),y_scale*(y_off+depth));
 
 		ctx.stroke();
+
+		
 
 	}
 
@@ -45,5 +48,6 @@ function continueWire(idPrefix, id, depth, jumpLength ,x_off, y_off, x_scale, y_
 		ctx.lineTo(x_scale*(x_off+315),y_scale*(y_off+0));
 
 		ctx.stroke();
+		
 
 }
