@@ -4,7 +4,7 @@
   "description": "To run this program you need to have nodeJS (>= 6.11.x) installed before hand.",
   "main": "server.js",
   "scripts": {
-    "test": "npm start && ./node_modules/.bin/mocha",
+    "test": "./node_modules/.bin/mocha",
     "start": "node server.js"
   },
   "repository": {
