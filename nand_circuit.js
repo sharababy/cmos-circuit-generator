@@ -1,8 +1,8 @@
-function nand(id,mod_num,a_name,a_alias,b_name,b_alias,x_off,y_off,x_scale,y_scale){
-
+function nand(id,mod_num,a_name,a_alias,b_name,b_alias,x_off,y_off,x_scale,y_scale,isT1,isT2,isDirect){
 			var canvas = document.getElementById(id);
 			var ctx = canvas.getContext("2d");
 			ctx.beginPath();
+
 			ctx.moveTo(x_scale*(x_off + 235),y_scale*(y_off + 30));
 			ctx.lineTo(x_scale*(x_off + 265),y_scale*(y_off + 30));
 			ctx.moveTo(x_scale*(x_off + 250),y_scale*(y_off + 30));
@@ -65,15 +65,40 @@ function nand(id,mod_num,a_name,a_alias,b_name,b_alias,x_off,y_off,x_scale,y_sca
 			ctx.moveTo(x_scale*(x_off+303),y_scale*(y_off+95)); // perpendicular line in pmos 2
 			ctx.lineTo(x_scale*(x_off+318),y_scale*(y_off+95));
 
-			ctx.moveTo(x_scale*(x_off+250),y_scale*(y_off+135)); // output line
-			ctx.lineTo(x_scale*(x_off+400),y_scale*(y_off+135));
+			
 
 			ctx.moveTo(x_scale*(x_off+182),y_scale*(y_off+95)); // common input line
 			ctx.lineTo(x_scale*(x_off+182),y_scale*(y_off+165));
 
 			ctx.moveTo(x_scale*(x_off+182),y_scale*(y_off+135)); // common input line
-			ctx.lineTo(x_scale*(x_off+100),y_scale*(y_off+135));
+			
 
+			if (isT1 == 0) {
+				ctx.lineTo(x_scale*(x_off+100),y_scale*(y_off+135));
+			}
+			else{
+				ctx.lineTo(x_scale*(x_off+150),y_scale*(y_off+135));
+			}
+
+			if (isT2 == 0) {
+				
+				ctx.moveTo(x_scale*(x_off+318),y_scale*(y_off+95));  // perpendicular line in pmos 2
+				ctx.lineTo(x_scale*(x_off+318),y_scale*(y_off+185));
+				ctx.lineTo(x_scale*(x_off+215),y_scale*(y_off+185));
+				ctx.lineTo(x_scale*(x_off+215),y_scale*(y_off+205));
+				ctx.lineTo(x_scale*(x_off+215),y_scale*(y_off+265));
+			}
+
+			
+			if (isDirect == 1) {
+				ctx.moveTo(x_scale*(x_off+250),y_scale*(y_off+135)); // output line
+				ctx.lineTo(x_scale*(x_off+400),y_scale*(y_off+135));
+			}
+			else if(isDirect == 0){
+				ctx.moveTo(x_scale*(x_off+250),y_scale*(y_off+135)); // output line
+				ctx.lineTo(x_scale*(x_off+350),y_scale*(y_off+135));
+				ctx.lineTo(x_scale*(x_off+350),y_scale*(y_off+265));
+			}
 
 
 			ctx.stroke();
@@ -99,10 +124,10 @@ function nand(id,mod_num,a_name,a_alias,b_name,b_alias,x_off,y_off,x_scale,y_sca
 
 			// text.font="12px Verdana";
 			text.font="17px Verdana";
-			text.fillText(b_alias+"  (INPUT)",10,230);
+			text.fillText(a_alias+"  (INPUT)",10,230);
 			//text.fillText(b_alias+"  (INPUT)",145,170);
-			text.fillText(a_alias,400,175);
-			text.fillText(a_alias,160,400);
+			text.fillText(b_alias,400,175);
+			text.fillText(b_alias,160,400);
 
 			text.font="16px Verdana";
 			text.fillStyle="#FF0000"

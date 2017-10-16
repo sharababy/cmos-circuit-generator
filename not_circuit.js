@@ -82,5 +82,7 @@ function not(id,mod_num,a_name,a_alias,b_name,b_alias,x_off,y_off,x_scale,y_scal
 			text.fillText(a_name+" = "+a_alias,10,455);
 }
 /*
-a&b^c&(~d)
+a&b^c&(~d)	
+(((a&b)^d)&(e^(~f)))^((g^(~h))&(i&(j^k)))
 */
+

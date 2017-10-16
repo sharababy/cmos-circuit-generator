@@ -40,7 +40,8 @@ http.createServer(function (request, response) {
         var c = circuit.contruct_circuit(postfix,bool_values);
         
         response.end(JSON.stringify(c))
-        
+
+
      }
      else{
             if (request.url == "/") {
@@ -63,7 +64,7 @@ http.createServer(function (request, response) {
      response.end()     // end the response so browsers don't hang
      console.log(e.stack)
    }
-}).listen(port)
+}).listen(port,function(){console.log("Simulator running on http://localhost:3001")})
 //( (~( ( (~a) & (b) )^(c) ) ) & (d^e) ) & (f^g)
 
 // ((~(((~a)&(b))^(c)))&(d^e))&(f^g)

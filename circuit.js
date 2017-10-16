@@ -124,6 +124,8 @@ function contruct_circuit(postfix,bool_values){
 
 			new_mod.count = 0;
 			new_mod.eval = 0;
+			new_mod.input1 = null;
+			new_mod.input2 = null;
 
 			c.push(new_mod);
 			
