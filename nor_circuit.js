@@ -75,9 +75,7 @@ function nor(id,mod_num,a_name,a_alias,b_name,b_alias,x_off,y_off,x_scale,y_scal
 			ctx.moveTo(x_scale*(x_off+296),y_scale*(y_off+195)); // perpendicular line in parellel 2
 			ctx.lineTo(x_scale*(x_off+310),y_scale*(y_off+195));
 
-			ctx.moveTo(x_scale*(x_off+250),y_scale*(y_off+135)); // output line
-			ctx.lineTo(x_scale*(x_off+400),y_scale*(y_off+135));
-
+			
 			ctx.moveTo(x_scale*(x_off+182),y_scale*(y_off+105)); // common input line
 			ctx.lineTo(x_scale*(x_off+182),y_scale*(y_off+195));
 
@@ -98,6 +96,16 @@ function nor(id,mod_num,a_name,a_alias,b_name,b_alias,x_off,y_off,x_scale,y_scal
 				ctx.lineTo(x_scale*(x_off+210),y_scale*(y_off+40));
 				ctx.lineTo(x_scale*(x_off+310),y_scale*(y_off+40));
 				ctx.lineTo(x_scale*(x_off+310),y_scale*(y_off+260));
+			}
+
+			if (isDirect == 1) {
+				ctx.moveTo(x_scale*(x_off+250),y_scale*(y_off+135)); // output line
+				ctx.lineTo(x_scale*(x_off+400),y_scale*(y_off+135));
+			}
+			else if(isDirect == 0){
+				ctx.moveTo(x_scale*(x_off+250),y_scale*(y_off+135)); // output line
+				ctx.lineTo(x_scale*(x_off+350),y_scale*(y_off+135));
+				ctx.lineTo(x_scale*(x_off+350),y_scale*(y_off+265));
 			}
 
 
