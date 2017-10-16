@@ -4,7 +4,7 @@
   "description": "To run this program you need to have nodeJS (>= 6.11.x) installed before hand.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "./node_modules/.bin/mocha",
     "start": "node server.js"
   },
   "repository": {
@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/sharababy/cmos-circuit-generator/issues"
   },
-  "homepage": "https://github.com/sharababy/cmos-circuit-generator#readme"
+  "homepage": "https://github.com/sharababy/cmos-circuit-generator#readme",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1",
+    "request": "^2.83.0"
+  }
 }
