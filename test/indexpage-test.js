@@ -1,9 +1,12 @@
 var expect  = require('chai').expect;
 var request = require('request');
 
-var server = require('../server');
+var server = require('../server').server;
 
+function closeServer(server){
 
+	server.close()
+}
 
 describe('Logical Ops', () => {
 
@@ -24,5 +27,5 @@ describe('Logical Ops', () => {
 
 	});
 
-
+	setTimeout(closeServer , 5000 , server)
 });

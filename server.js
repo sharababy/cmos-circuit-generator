@@ -10,7 +10,7 @@ var baseDirectory = __dirname   // or whatever base directory you want
 
 var port = 3001
 
-http.createServer(function (request, response) {
+var server = http.createServer(function (request, response) {
    try {
      var requestUrl = url.parse(request.url)
 
@@ -68,3 +68,6 @@ http.createServer(function (request, response) {
 //( (~( ( (~a) & (b) )^(c) ) ) & (d^e) ) & (f^g)
 
 // ((~(((~a)&(b))^(c)))&(d^e))&(f^g)
+
+
+module.exports = {server}
