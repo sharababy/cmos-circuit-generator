@@ -107,7 +107,7 @@ function contruct_circuit(postfix,bool_values){
 			compute_stack.push(new_mod);
 
 			new_mod.input1 = input1;
-			new_mod.input2 = input2;
+			new_mod.input2 = input1;
 			new_mod.count = mod_count;
 			new_mod.op = 3;
 			new_mod.eval = 1;

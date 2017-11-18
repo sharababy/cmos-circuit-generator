@@ -44,9 +44,9 @@ var server = http.createServer(function (request, response) {
 
      }
      else{
-            if (request.url == "/") {
-                fsPath = "index.html";
-            }
+        if (request.url == "/") {
+            fsPath = "index.html";
+        }
             
          var fileStream = fs.createReadStream(fsPath)
          fileStream.pipe(response)
