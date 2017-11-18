@@ -12,12 +12,20 @@
 
 
 		<style type="text/css">
+			#main{
+				display: block;
+				/*border:1px solid #000;*/
+			}
 			.mod{
 				/*border: 1px solid #000;*/
 				width:300px;
 				height:300px;
 			}
 			#list,#wires{
+				/*Do not disturb , very critical for the positioning for wires*/
+				max-width:auto;
+				width:100%;
+				/*border:1px solid #000;*/
 				 /*overflow-x:scroll;*/
 				 white-space:nowrap;
 			}
@@ -44,13 +52,15 @@
 		<br>
 		<h2>Module List</h2>
 
-		<div style="display: inline-block;" id="list">
-			
-		</div>
-		<div style="display: inline-block;" id="wires">
-			
-		</div>
+		<div id="main">
+			<div style="display: inline-block;" id="list">
+				
+			</div>
 
+			<div style="display: inline-block;" id="wires">
+				
+			</div>
+		</div>
 		<script type="text/javascript">
 				
 			function borderToggle(){
