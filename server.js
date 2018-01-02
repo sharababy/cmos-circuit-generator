@@ -8,7 +8,7 @@ var circuit = require('./circuit');
 
 var baseDirectory = __dirname   // or whatever base directory you want
 
-var port = 3001
+var port = process.env.PORT || 3001
 
 var server = http.createServer(function (request, response) {
    try {
